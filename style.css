@@ -1,0 +1,176 @@
+body {
+  font-family: 'Joanna', serif;
+  background-color: #f1eee9;
+  color: #2f2f2f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'Joanna';
+  src: local('Joanna Regular'), local('Joanna-Regular'),
+       url('JoannaMTStd.woff2') format('woff2'),
+       url('JoannaMTStd.woff') format('woff'),
+       url('JoannaMTStd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-joanna {
+  font-family: 'Joanna', serif;
+}
+
+/* Hero Section Adjustments */
+.hero-section-height-final {
+  height: 600px; /* Adjust height as needed */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hero-section-height-final img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Popular Categories Adjustments */
+.popular-category-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; /* Adjusted gap for better spacing */
+}
+
+.popular-category-img-final {
+  width: 250px; /* Increased size for category images */
+  height: 250px; /* Increased size for square images */
+  object-fit: contain; /* Ensures the image is contained within the box */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Gift Section Adjustments */
+.gift-section-height-final {
+    height: 400px; /* Similar height to example image */
+}
+
+/* New Arrivals Adjustments */
+.new-arrivals-grid {
+  grid-template-columns: repeat(4, 1fr); /* Changed to 4 columns to match example */
+  gap: 2rem;
+}
+
+.new-arrivals-img-final { /* Changed from .new-arrivals-grid > div img */
+  width: 250px; /* Increased size for new arrivals images */
+  height: 250px; /* Increased size for square images */
+  object-fit: contain; /* Ensures the image is contained within the box */
+  margin: 0 auto;
+}
+
+
+/* Get Inspired Adjustments */
+.inspiration-img-final {
+    height: 400px; /* Set a fixed height for consistency */
+    object-fit: cover;
+}
+
+/* Footer Adjustments */
+footer {
+  background-color: #d4c7bb; /* Cor de fundo principal do rodapé */
+  font-size: 0.75rem;
+  width: 100%;
+}
+
+/* Ajustes para a seção superior do rodapé */
+footer .max-w-screen-xl.py-6 {
+    padding-top: 1.5rem; /* Ajuste para o espaçamento superior */
+    padding-bottom: 1.5rem; /* Ajuste para o espaçamento inferior */
+}
+
+/* Ajustes para a barra inferior do rodapé */
+.footer-bottom-bar {
+    background-color: #b09f8d; /* Cor da barra inferior */
+    color: #2f2f2f; /* Cor do texto na barra inferior */
+    padding-top: 1rem; /* Diminuído para deixar mais fino */
+    padding-bottom: 1rem; /* Diminuído para deixar mais fino */
+    width: 100%;
+}
+
+footer h4 {
+    margin-bottom: 0.5rem; /* Margem ajustada para títulos mais compactos */
+}
+
+footer ul {
+    margin-top: 0; /* Remove margem superior padrão da lista */
+}
+
+footer input[type="email"] {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  padding: 0.4rem 0.6rem; /* Padding reduzido para input */
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+footer button[type="submit"] {
+  background-color: #2f2f2f;
+  padding: 0.4rem 0.6rem; /* Padding reduzido para botão */
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+footer .flex.flex-col.md\:text-right {
+    align-items: flex-end; /* Alinha o formulário de newsletter à direita no desktop */
+}
+
+footer .flex.flex-col.gap-2.w-full.md\:ml-auto {
+    align-items: flex-end; /* Garante que o input e botão fiquem alinhados à direita */
+}
+
+footer .border-t {
+    border-color: rgba(0, 0, 0, 0.1); /* Cor mais sutil para a linha divisória */
+    padding-top: 1rem; /* Ajuste para o espaçamento superior da linha */
+}
+
+footer select#country-select {
+    padding-right: 2.5rem;
+}
+
+/* Transições */
+img.transition-colors,
+button.transition-colors,
+a.transition-colors {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Media query para desktop para alinhar as colunas e o formulário */
+@media (min-width: 768px) {
+    footer .max-w-screen-xl.py-6 {
+        flex-direction: row; /* Colunas lado a lado */
+        justify-content: space-between; /* Espaço entre elas */
+        align-items: flex-start; /* Alinha no topo */
+    }
+
+    .footer-col-group {
+        width: auto; /* Deixa a largura ser definida pelo conteúdo */
+        margin-right: 3rem; /* Espaçamento entre as colunas de links */
+    }
+
+    .footer-col-group:last-of-type { /* O último grupo de links (Social) */
+        margin-right: 0;
+    }
+
+    footer .flex-col.md\:flex-row.justify-between.w-full.md\:w-auto.md\:space-x-12 {
+        flex-direction: row; /* Para os grupos de links ficarem lado a lado */
+        width: auto; /* Deixa o espaço ser definido pelo conteúdo */
+        justify-content: flex-start; /* Alinha os grupos de links à esquerda */
+        space-x: 0; /* Remove o espaço entre os grupos de links aqui, o gap será definido pelos margins */
+    }
+
+    footer .md\:w-1\/3.md\:text-right.mt-8.md\:mt-0.md\:ml-auto {
+        width: 33.33%; /* Ajusta a largura da coluna da newsletter */
+        margin-left: auto; /* Empurra para a direita */
+    }
+}
