@@ -28,27 +28,11 @@
     <script src="js/products.js"></script>
     <script src="js/layout.js"></script>
     <script>
-        const renderProducts = (category) => {
-            const productGrid = document.getElementById('product-grid');
-            if (!productGrid) return;
-            const filteredProducts = products.filter(p => p.category === category);
-            productGrid.innerHTML = filteredProducts.map(product => `
-                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <p class="text-gray-700 text-sm mb-4">${product.name}</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-2xl font-semibold text-[#2f2f2f]">${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
-                            <a href="https://wa.me/5511985842013?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20peça%20${encodeURIComponent(product.name)}." target="_blank" class="buy-button bg-[var(--cor-destaque)] text-white px-4 py-2 rounded hover:bg-[var(--cor-destaque-hover)] transition-colors duration-300">
-                                Comprar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        };
+        // Script simplificado: A função renderProducts agora vem do layout.js
         document.addEventListener('DOMContentLoaded', () => {
-            renderProducts('pulseiras');
+            if (typeof renderProducts === 'function') {
+                renderProducts('pulseiras');
+            }
         });
     </script>
 </body>

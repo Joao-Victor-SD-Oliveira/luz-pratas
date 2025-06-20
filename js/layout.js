@@ -1,11 +1,41 @@
 /*
   Descrição: Este script implementa funcionalidades globais de layout.
 
-  - Navegação Dinâmica: Monta os links do header de forma contextual.
+  - Carregamento de Componentes: Carrega header e footer.
+  - Renderização de Produtos: Função centralizada para exibir produtos.
+  - Navegação Dinâmica: Monta os links do header de forma consistente.
+  - Menu Mobile: Controla a abertura e fechamento do menu.
+  - Transições de Página: Animações suaves ao navegar.
 */
+
+// Função global para renderizar produtos. Centralizada para fácil manutenção.
+const renderProducts = (category) => {
+    const productGrid = document.getElementById('product-grid');
+    if (!productGrid) return;
+
+    // Se uma categoria é fornecida, filtra os produtos. Caso contrário, usa todos (para uma página "Loja Completa").
+    const filteredProducts = category ? products.filter(p => p.category === category) : products;
+
+    productGrid.innerHTML = filteredProducts.map(product => `
+        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+            <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <p class="text-gray-700 text-sm mb-4">${product.name}</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-semibold text-[#2f2f2f]">${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                    <a href="https://wa.me/5511985842013?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20a%20peça%20${encodeURIComponent(product.name)}." target="_blank" class="buy-button bg-[var(--cor-destaque)] text-white px-4 py-2 rounded hover:bg-[var(--cor-destaque-hover)] transition-colors duration-300">
+                        Comprar
+                    </a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+};
+
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    // Função para carregar componentes HTML (header, footer)
     const loadComponent = async (selector, url) => {
         try {
             const response = await fetch(url);
@@ -18,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
+    // Lógica do menu mobile
     const initializeMobileMenu = () => {
         const menuButton = document.getElementById('menu-button');
         const closeMenuButton = document.getElementById('close-menu-button');
@@ -28,14 +59,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
     
+    // Cria a navegação de forma dinâmica e consistente
     const initializeDynamicHeader = () => {
         const desktopNav = document.getElementById('desktop-nav-links');
         const mobileNav = document.getElementById('mobile-nav-links');
         if (!desktopNav || !mobileNav) return;
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-        // MUDANÇA AQUI: "Todos os Produtos" foi renomeado para "Loja"
-        const allLinks = [
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        const navLinks = [
             { name: 'Início', href: 'index.html' },
             { name: 'Loja', href: 'todos-os-produtos.html' },
             { name: 'Brincos', href: 'brincos.html' },
@@ -44,54 +76,48 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: 'Pulseiras', href: 'pulseiras.html' }
         ];
 
-        let navLinks = '';
-        let mobileLinks = '';
+        // Cria os links para o menu desktop
+        desktopNav.innerHTML = navLinks
+            .filter(link => link.href !== currentPage) // Não mostra o link da página atual
+            .map(link => `<a href="${link.href}" class="hover:text-[var(--cor-destaque)] hover:underline transition-colors duration-200">${link.name}</a>`)
+            .join('');
 
-        if (currentPage === 'index.html') {
-            navLinks = `<a href="#loja" class="hover:text-[var(--cor-destaque)] hover:underline transition-colors duration-200">Categorias</a>`;
-            mobileLinks = `<a href="#loja" class="text-gray-600 hover:text-[#2f2f2f] text-lg uppercase">Categorias</a>
-                           <a href="#" class="text-gray-600 hover:text-[#2f2f2f] text-lg">Contato</a>`;
-        } else {
-            allLinks.forEach(link => {
-                if (currentPage === 'index.html' && link.href === 'index.html') return;
-                const isActiveClass = link.href === currentPage ? 'active-link' : '';
-                navLinks += `<a href="${link.href}" class="hover:text-[var(--cor-destaque)] hover:underline transition-colors duration-200 ${isActiveClass}">${link.name}</a>`;
-                mobileLinks += `<a href="${link.href}" class="text-gray-600 hover:text-[#2f2f2f] text-lg uppercase ${isActiveClass}">${link.name}</a>`;
-            });
-        }
-        
-        desktopNav.innerHTML = navLinks;
-        mobileNav.innerHTML = mobileLinks;
+        // Cria os links para o menu mobile
+        mobileNav.innerHTML = navLinks.map(link => {
+            const isActiveClass = link.href === currentPage ? 'active-link' : '';
+            return `<a href="${link.href}" class="text-gray-600 hover:text-[#2f2f2f] text-lg uppercase ${isActiveClass}">${link.name}</a>`;
+        }).join('');
     };
 
+    // Efeito de transição suave entre páginas
     const initializePageTransitions = () => {
         document.body.classList.add('body-fade-in');
-        setTimeout(() => {
-            const internalLinks = document.querySelectorAll('a[href]:not([target="_blank"])');
-            internalLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    const href = this.getAttribute('href');
-                    if (href && !href.startsWith('#') && !this.classList.contains('active-link')) {
-                        event.preventDefault(); 
-                        document.body.classList.add('body-fade-out'); 
-                        setTimeout(() => {
-                            window.location.href = href;
-                        }, 400); 
-                    }
-                });
-            });
-        }, 100); 
+        document.body.addEventListener('click', function(event) {
+            const link = event.target.closest('a');
+            if (link && link.href && !link.target && !link.href.includes('#') && new URL(link.href).hostname === location.hostname) {
+                event.preventDefault();
+                document.body.classList.add('body-fade-out');
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 400);
+            }
+        });
     };
 
+    // Função principal que orquestra a inicialização do layout
     const initializeLayout = async () => {
         const headerPlaceholder = document.getElementById('header-placeholder');
         if(headerPlaceholder) {
             headerPlaceholder.classList.add('sticky', 'top-0', 'z-50', 'w-full');
         }
+        
+        // Carrega header e footer em paralelo
         await Promise.all([
             loadComponent('#header-placeholder', 'header.html'),
             loadComponent('#footer-placeholder', 'footer.html')
         ]);
+        
+        // Inicializa os scripts que dependem do header/footer
         initializeDynamicHeader();
         initializeMobileMenu();
         initializePageTransitions();
