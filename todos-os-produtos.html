@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja | Luz Joias</title>
+    <meta name="description" content="Explore a coleção completa de joias da Luz. Encontre anéis, colares, brincos e pulseiras exclusivos.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f1eee9] text-[#2f2f2f]">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="bg-[#f8f8f8] pt-32 pb-16 px-6 md:px-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#2f2f2f] leading-tight mb-4 uppercase">NOSSA LOJA</h1>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">Navegue por nossa coleção completa e encontre a peça perfeita para você.</p>
+        </section>
+        
+        <section class="py-16 px-6 md:px-12 bg-white">
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <script src="js/products.js"></script>
+    <script src="js/layout.js"></script>
+    <script>
+        // Script para renderizar os produtos nesta página
+        document.addEventListener('DOMContentLoaded', () => {
+            const productGrid = document.getElementById('product-grid');
+            if (productGrid) {
+                const productsToRender = products; 
+                
+                // MUDANÇA AQUI: O card do produto agora inclui o botão "Comprar"
+                productGrid.innerHTML = productsToRender.map(product => `
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-700 text-sm mb-4 truncate">${product.name}</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-semibold text-[#2f2f2f]">${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                                <a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20pe%C3%A7a%20${encodeURIComponent(product.name)}." target="_blank" rel="noopener noreferrer" class="buy-button bg-[var(--cor-destaque)] text-white px-4 py-2 rounded hover:bg-[var(--cor-destaque-hover)] transition-colors duration-300 text-sm">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

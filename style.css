@@ -1,7 +1,30 @@
+/*
+  Descrição: Folha de estilos principal do site.
+  
+  Melhorias implementadas:
+  - Variáveis CSS (Custom Properties): Para facilitar a manutenção do tema.
+  - Melhoras de Interatividade: Transições suaves e feedback visual em elementos interativos.
+  - Rolagem Suave: Comportamento de rolagem suave para navegação na página.
+*/
+
+/* Definição das variáveis globais de estilo */
+:root {
+  --cor-fundo: #f1eee9;
+  --cor-texto: #2f2f2f;
+  --cor-destaque: #b58e65;
+  --cor-destaque-hover: #a07c57;
+  --cor-sombra-card: rgba(181, 142, 101, 0.2);
+}
+
+/* NOVA REGRA PARA ROLAGEM SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Joanna', serif;
-  background-color: #f1eee9;
-  color: #2f2f2f;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -23,154 +46,127 @@ body {
   font-family: 'Joanna', serif;
 }
 
-/* Hero Section Adjustments */
-.hero-section-height-final {
-  height: 600px; /* Adjust height as needed */
-  grid-template-columns: repeat(2, 1fr);
+/* Estilos para os cards de produto das páginas de categoria */
+.product-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.product-card:hover {
+  transform: translateY(-8px); /* Efeito de "elevar" o card mais pronunciado */
+  box-shadow: 0 10px 20px var(--cor-sombra-card);
 }
 
-.hero-section-height-final img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.product-card img {
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Popular Categories Adjustments */
-.popular-category-grid {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem; /* Adjusted gap for better spacing */
+.product-card:hover img {
+    transform: scale(1.03); /* Leve zoom na imagem ao passar o mouse */
 }
 
-.popular-category-img-final {
-  width: 250px; /* Increased size for category images */
-  height: 250px; /* Increased size for square images */
-  object-fit: contain; /* Ensures the image is contained within the box */
-  margin-left: auto;
-  margin-right: auto;
+/* Melhoria no botão de compra */
+.buy-button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Gift Section Adjustments */
-.gift-section-height-final {
-    height: 400px; /* Similar height to example image */
-}
-
-/* New Arrivals Adjustments */
-.new-arrivals-grid {
-  grid-template-columns: repeat(4, 1fr); /* Changed to 4 columns to match example */
-  gap: 2rem;
-}
-
-.new-arrivals-img-final { /* Changed from .new-arrivals-grid > div img */
-  width: 250px; /* Increased size for new arrivals images */
-  height: 250px; /* Increased size for square images */
-  object-fit: contain; /* Ensures the image is contained within the box */
-  margin: 0 auto;
+.buy-button:hover {
+    transform: scale(1.05); /* Leve crescimento do botão ao passar o mouse */
 }
 
 
-/* Get Inspired Adjustments */
-.inspiration-img-final {
-    height: 400px; /* Set a fixed height for consistency */
-    object-fit: cover;
-}
+/* -- Seção de Estilos do index.html -- */
 
-/* Footer Adjustments */
+.hero-section-height-final { height: 600px; }
+.popular-category-img-final { width: 250px; height: 250px; object-fit: contain; }
+.gift-section-height-final { height: 400px; }
+.new-arrivals-img-final { width: 250px; height: 250px; object-fit: contain; }
+.inspiration-img-final { height: 400px; object-fit: cover; }
+
+
+/* -- Estilos do Rodapé -- */
 footer {
-  background-color: #d4c7bb; /* Cor de fundo principal do rodapé */
+  background-color: #d4c7bb;
   font-size: 0.75rem;
   width: 100%;
 }
 
-/* Ajustes para a seção superior do rodapé */
-footer .max-w-screen-xl.py-6 {
-    padding-top: 1.5rem; /* Ajuste para o espaçamento superior */
-    padding-bottom: 1.5rem; /* Ajuste para o espaçamento inferior */
-}
-
-/* Ajustes para a barra inferior do rodapé */
 .footer-bottom-bar {
-    background-color: #b09f8d; /* Cor da barra inferior */
-    color: #2f2f2f; /* Cor do texto na barra inferior */
-    padding-top: 1rem; /* Diminuído para deixar mais fino */
-    padding-bottom: 1rem; /* Diminuído para deixar mais fino */
-    width: 100%;
+  background-color: #b09f8d;
+  color: #2f2f2f;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
 }
 
-footer h4 {
-    margin-bottom: 0.5rem; /* Margem ajustada para títulos mais compactos */
+/* --- ESTILOS PARA TRANSIÇÃO DE PÁGINA --- */
+
+/* Animação de Fade In (Surgimento) COM LEVE DESLIZE */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(15px); /* Começa 15px abaixo */
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); /* Termina na posição original */
+  }
 }
 
-footer ul {
-    margin-top: 0; /* Remove margem superior padrão da lista */
+/* Animação de Fade Out (Desaparecimento) COM LEVE DESLIZE */
+@keyframes fadeOut {
+  from { 
+    opacity: 1;
+    transform: translateY(0); /* Começa na posição original */
+  }
+  to { 
+    opacity: 0;
+    transform: translateY(15px); /* Termina 15px abaixo */
+  }
 }
 
-footer input[type="email"] {
-  background-color: white;
-  border: 1px solid #d1d5db;
-  padding: 0.4rem 0.6rem; /* Padding reduzido para input */
-  font-size: 0.75rem;
-  border-radius: 4px;
+/* O resto do CSS permanece o mesmo... */
+.body-fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
 }
 
-footer button[type="submit"] {
-  background-color: #2f2f2f;
-  padding: 0.4rem 0.6rem; /* Padding reduzido para botão */
-  font-size: 0.75rem;
-  border-radius: 4px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
+.body-fade-out {
+  animation: fadeOut 0.4s ease-in-out forwards;
 }
 
-footer .flex.flex-col.md\:text-right {
-    align-items: flex-end; /* Alinha o formulário de newsletter à direita no desktop */
+body {
+  opacity: 0;
 }
 
-footer .flex.flex-col.gap-2.w-full.md\:ml-auto {
-    align-items: flex-end; /* Garante que o input e botão fiquem alinhados à direita */
+/* --- ESTILO PARA O LINK DE NAVEGAÇÃO ATIVO --- */
+
+a.active-link {
+  /* Define a cor do texto para a cor de destaque (bege) */
+  color: var(--cor-destaque);
+  /* Adiciona o sublinhado permanente */
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px; /* Distância do sublinhado ao texto */
 }
 
-footer .border-t {
-    border-color: rgba(0, 0, 0, 0.1); /* Cor mais sutil para a linha divisória */
-    padding-top: 1rem; /* Ajuste para o espaçamento superior da linha */
+/* Remove qualquer efeito de hover adicional do link que já está ativo */
+a.active-link:hover {
+  /* Garante que a cor e o sublinhado não mudem ao passar o mouse */
+  color: var(--cor-destaque);
+  text-decoration: underline;
 }
 
-footer select#country-select {
-    padding-right: 2.5rem;
+/* Para o menu mobile, aplica a cor e o destaque */
+#mobile-nav-links a.active-link {
+    color: var(--cor-destaque);
+    font-weight: 600; /* Mantém em negrito para maior destaque */
+    /* Opcional: pode-se adicionar o sublinhado aqui também se desejar */
+    /* text-decoration: underline; */
 }
 
-/* Transições */
-img.transition-colors,
-button.transition-colors,
-a.transition-colors {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
-}
-
-/* Media query para desktop para alinhar as colunas e o formulário */
-@media (min-width: 768px) {
-    footer .max-w-screen-xl.py-6 {
-        flex-direction: row; /* Colunas lado a lado */
-        justify-content: space-between; /* Espaço entre elas */
-        align-items: flex-start; /* Alinha no topo */
-    }
-
-    .footer-col-group {
-        width: auto; /* Deixa a largura ser definida pelo conteúdo */
-        margin-right: 3rem; /* Espaçamento entre as colunas de links */
-    }
-
-    .footer-col-group:last-of-type { /* O último grupo de links (Social) */
-        margin-right: 0;
-    }
-
-    footer .flex-col.md\:flex-row.justify-between.w-full.md\:w-auto.md\:space-x-12 {
-        flex-direction: row; /* Para os grupos de links ficarem lado a lado */
-        width: auto; /* Deixa o espaço ser definido pelo conteúdo */
-        justify-content: flex-start; /* Alinha os grupos de links à esquerda */
-        space-x: 0; /* Remove o espaço entre os grupos de links aqui, o gap será definido pelos margins */
-    }
-
-    footer .md\:w-1\/3.md\:text-right.mt-8.md\:mt-0.md\:ml-auto {
-        width: 33.33%; /* Ajusta a largura da coluna da newsletter */
-        margin-left: auto; /* Empurra para a direita */
-    }
+/*
+  Este código aplica uma margem superior de 100px a todas as seções
+  que possuem um ID. Essa margem só é considerada durante a rolagem da página,
+  garantindo que o conteúdo da seção não fique escondido atrás do header fixo.
+*/
+section[id] {
+  scroll-margin-top: 100px; /* Ajuste este valor se a altura do seu header mudar */
 }

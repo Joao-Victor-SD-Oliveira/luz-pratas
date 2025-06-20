@@ -5,263 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luz | Joias Únicas para Momentos Especiais</title>
 
-    <meta name="description" content="Descubra a coleção exclusiva de joias da Nour Luz: colares, anéis, brincos e pulseiras para realçar sua beleza e estilo. Receba promoções e lançamentos!">
+    <meta name="description" content="Descubra a coleção exclusiva de joias da Luz: colares, anéis, brincos e pulseiras para realçar sua beleza e estilo. Receba promoções e lançamentos!">
     <meta name="keywords" content="joias, bijuterias, colares, anéis, brincos, pulseiras, moda, acessórios, luxo, semi joias, promoções, lançamentos, e-commerce joias">
     <meta name="author" content="Luz">
-    <meta property="og:title" content="Nour Luz | Joias Únicas para Momentos Especiais" />
-    <meta property="og:description" content="Descubra a coleção exclusiva de joias da Nour Luz: colares, anéis, brincos e pulseiras para realçar sua beleza e estilo." />
-    <meta property="og:image" content="https://seusite.com/banner.png" />
+    <meta property="og:title" content="Luz | Joias Únicas para Momentos Especiais" />
+    <meta property="og:description" content="Descubra a coleção exclusiva de joias da Luz: colares, anéis, brincos e pulseiras para realçar sua beleza e estilo." />
+    <meta property="og:image" content="imagens/banner.png" />
     <meta property="og:url" content="https://seusite.com" />
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalDLrpkC8bFh/fK5/k5t+4iYm0R55/f9MhR181057l5o/xM7G2/s5W+7t+098/f0+020a/k1+4f/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#f1eee9] text-[#2f2f2f]">
+<body class="bg-[var(--cor-fundo)] text-[var(--cor-texto)]">
 
-    <div class="bg-[#d4c7bb] text-[#2f2f2f] text-center py-2.5 text-xs md:text-sm tracking-wider">
-        CONFIRA NOSSAS PROMOÇÕES E LANÇAMENTOS!
-    </div>
+    <div id="header-placeholder"></div>
 
-    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300 ease-in-out" id="main-header">
-        <div class="max-w-screen-xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center relative">
-            <nav aria-label="Main Navigation" class="flex space-x-6 md:space-x-8 text-xs md:text-sm uppercase tracking-wider">
-                <a href="#loja" class="hover:text-[#b58e65] hover:underline transition-colors duration-200" aria-label="Navegar para a seção de loja">Loja</a>
-                <a href="#tendencias" class="hover:text-[#b58e65] hover:underline transition-colors duration-200" aria-label="Descobrir tendências">Tendências</a>
-                <a href="#sobre" class="hover:text-[#b58e65] hover:underline transition-colors duration-200" aria-label="Saber mais sobre nós">Sobre</a>
-            </nav>
-            <a href="/" class="text-3xl font-bold tracking-[.3em] uppercase absolute left-1/2 -translate-x-1/2 font-joanna transition-colors duration-200 hover:text-[#b58e65]" aria-label="Nour Luz Home">luz</a>
-            <div class="flex space-x-4 md:space-x-6 text-xs md:text-sm items-center">
-                <a href="#" class="text-gray-600 hover:text-[#b58e65] hover:underline uppercase transition-colors duration-200" aria-label="Acessar sua conta">Entrar</a>
-                <a href="#" class="text-gray-600 hover:text-[#b58e65] hover:underline uppercase transition-colors duration-200" aria-label="Acessar ajuda">Ajuda</a>
-                <a href="#" class="text-base md:text-lg hover:text-[#b58e65] transition-colors duration-200" aria-label="Ver sacola de compras">
-                    <i class="fas fa-shopping-bag"></i>
-                </a>
+    <main>
+        <section class="hero-section-height-final grid md:grid-cols-2 bg-white relative overflow-hidden">
+            <div class="relative overflow-hidden group">
+                <img src="imagens/fundo1.png" alt="Colar com pingente de cauda de sereia em uma bandeja dourada" loading="eager" class="w-full h-full object-cover transition-colors duration-300" />
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </div>
-        </div>
-    </header>
+            <div class="relative overflow-hidden group">
+                <img src="imagens/fundo2.png" alt="Diversos brincos e correntes de prata em um espelho" loading="eager" class="w-full h-full object-cover transition-colors duration-300" />
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            </div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 p-4 bg-black bg-opacity-20 md:bg-opacity-0">
+                <div class="text-white max-w-lg">
+                    <h2 class="text-4xl lg:text-5xl font-joanna font-bold mb-4 md:mb-5 leading-tight tracking-wide drop-shadow-md">EXPERIMENTE ALGO NOVO</h2>
+                    <p class="mb-8 md:mb-10 text-lg lg:text-xl leading-relaxed tracking-normal drop-shadow-md">joias com essencia e significado.</p>
+                    
+                    <div class="flex justify-center items-center gap-x-6">
+                        <a href="todos-os-produtos.html" class="w-48 text-center bg-[var(--cor-destaque)] text-white py-3.5 font-semibold transition-colors duration-300 border border-[var(--cor-destaque)] text-sm uppercase tracking-wider rounded-full shadow-md hover:bg-[var(--cor-destaque-hover)] hover:border-[var(--cor-destaque-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--cor-destaque)] focus:ring-opacity-75">Loja Completa</a>
+                        <a href="#tendencias" class="w-48 text-center border border-white text-white py-3.5 font-semibold transition-colors duration-300 hover:bg-white hover:text-[var(--cor-destaque)] text-sm uppercase tracking-wider rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75">Novas Chegadas</a>
+                    </div>
 
-    <section class="hero-section-height-final grid md:grid-cols-2 bg-white relative overflow-hidden">
-        <div class="relative overflow-hidden group">
-            <img src="LUZ FOTOS/banner1.JPG" alt="Exibição elegante de joias com colares" loading="eager" class="w-full h-full object-cover transition-colors duration-300" />
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-        </div>
-
-        <div class="relative overflow-hidden group">
-            <img src="LUZ FOTOS/banner2.JPG" alt="Caixa de joias com anéis e brincos" loading="eager" class="w-full h-full object-cover transition-colors duration-300" />
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-        </div>
-
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 p-4 bg-black bg-opacity-20 md:bg-opacity-0">
-            <div class="text-white max-w-lg">
-                <h2 class="text-4xl lg:text-5xl font-joanna font-bold mb-4 md:mb-5 leading-tight tracking-wide drop-shadow-md">EXPERIMENTE ALGO NOVO</h2>
-                <p class="mb-8 md:mb-10 text-lg lg:text-xl leading-relaxed tracking-normal drop-shadow-md">joias com essencia e significado.</p>
-                <div class="space-x-4 flex justify-center">
-                    <button class="bg-[#b58e65] text-white px-7 py-3 md:px-9 md:py-3.5 font-semibold transition-colors duration-300 border border-[#b58e65] text-sm uppercase tracking-wider rounded-full shadow-md hover:bg-[#a07c57] hover:border-[#a07c57] focus:outline-none focus:ring-2 focus:ring-[#b58e65] focus:ring-opacity-75" aria-label="Comprar novos lançamentos">Novas Chegadas</button>
-                    <button class="border border-white text-white px-7 py-3 md:px-9 md:py-3.5 font-semibold transition-colors duration-300 hover:bg-white hover:text-[#b58e65] text-sm uppercase tracking-wider rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75" aria-label="Ver produtos mais vendidos">Mais Vendidos</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-16 bg-white" id="loja">
-        <div class="max-w-screen-xl mx-auto px-4 md:px-6">
-            <h3 class="text-2xl md:text-3xl font-joanna font-bold mb-8 text-left pb-2">Categorias Populares</h3>
-            <div class="bg-white">
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 popular-category-grid px-4 md:px-0">
-                    <div class="text-center flex flex-col items-center justify-start group"> <a href="brincos.html" class="block">
-                            <img src="LUZ FOTOS/brincotriangulo.JPG" alt="Categoria: Brincos" loading="lazy" class="mb-4 popular-category-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f]">Brincos</p>
+        <section class="py-16 bg-white" id="loja">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-6">
+                <h3 class="text-3xl font-joanna font-bold mb-10 text-left pb-2">Categorias Populares</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
+                        <a href="brincos.html" class="block">
+                            <img src="imagens/categoriabrinco.jpg" alt="Categoria: Brincos" loading="lazy" class="w-full h-56 object-cover">
+                            <div class="p-6 text-center">
+                                <p class="text-xl font-semibold text-[var(--cor-texto)]">Brincos</p>
+                            </div>
                         </a>
                     </div>
-                    <div class="text-center flex flex-col items-center justify-start group"> <a href="colares.html" class="block">
-                            <img src="LUZ FOTOS/colartrevo.JPG" alt="Categoria: Colares" loading="lazy" class="mb-4 popular-category-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f]">Colares</p>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
+                        <a href="colares.html" class="block">
+                            <img src="imagens/categoriacolar.png" alt="Categoria: Colares" loading="lazy" class="w-full h-56 object-cover">
+                            <div class="p-6 text-center">
+                                <p class="text-xl font-semibold text-[var(--cor-texto)]">Colares</p>
+                            </div>
                         </a>
                     </div>
-                    <div class="text-center flex flex-col items-center justify-start group"> <a href="aneis.html" class="block">
-                            <img src="LUZ FOTOS/anel.JPG" alt="Categoria: Anéis" loading="lazy" class="mb-4 popular-category-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f]">Anéis</p>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
+                        <a href="aneis.html" class="block">
+                            <img src="imagens/categoriaanel.png" alt="Categoria: Anéis" loading="lazy" class="w-full h-56 object-cover">
+                            <div class="p-6 text-center">
+                                <p class="text-xl font-semibold text-[var(--cor-texto)]">Anéis</p>
+                            </div>
                         </a>
                     </div>
-                    <div class="text-center flex flex-col items-center justify-start group"> <a href="pulseiras.html" class="block">
-                            <img src="LUZ FOTOS/pulseirabolinha.JPG" alt="Categoria: Pulseiras" loading="lazy" class="mb-4 popular-category-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f]">Pulseiras</p>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
+                        <a href="pulseiras.html" class="block">
+                            <img src="imagens/categoriapulseira.png" alt="Categoria: Pulseiras" loading="lazy" class="w-full h-56 object-cover">
+                            <div class="p-6 text-center">
+                                <p class="text-xl font-semibold text-[var(--cor-texto)]">Pulseiras</p>
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-16 bg-[#f8f8f8] grid md:grid-cols-2 items-center gift-section-height-final overflow-hidden" id="sobre">
-        <div class="p-8 md:p-12 text-left">
-            <h3 class="text-3xl lg:text-4xl font-joanna font-bold mb-5 md:mb-6 leading-tight text-[#2f2f2f]">Surpreenda quem você ama com um presente especial.</h3>
-            <a href="#" class="underline text-lg hover:text-[#b58e65] transition-colors duration-200" aria-label="Escolha um presente e nós embalamos com carinho.">você escolhe, nós embalamos com carinho.</a>
-        </div>
-        <div class="relative overflow-hidden h-full group">
-            <img src="banner.png" alt="Caixas de presente elegantemente embaladas" loading="lazy" class="w-full h-full object-cover transition-colors duration-300" />
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-white" id="tendencias">
-        <div class="max-w-screen-xl mx-auto">
-            <h3 class="text-3xl font-joanna font-bold mb-10 text-left px-4 md:px-6 flex items-center justify-between">
-                Novas Chegadas
-                <a href="#" class="text-sm uppercase tracking-wider text-gray-600 hover:underline hover:text-[#b58e65] transition-colors duration-200" aria-label="Ver todos os novos produtos">Ver todos os produtos</a>
-            </h3>
-            <div class="bg-white">
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 new-arrivals-grid px-4 md:px-0">
-                    <div class="text-center flex flex-col items-center justify-start group"> <img src="F2FD6709-8D2F-4357-8454-2DA1661CAAC7.jpg" alt="Brincos de prata" loading="lazy" class="mb-3 new-arrivals-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f] font-semibold">Brincos</p>
-                        <span class="text-sm text-gray-600">R$10</span>
-                    </div>
-                    <div class="text-center flex flex-col items-center justify-start group"> <img src="EBE77639-616B-4D99-9178-7FFC2FC246E7.jpg" alt="Colar de borboleta Harry Winston" loading="lazy" class="mb-3 new-arrivals-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f] font-semibold">Colar</p>
-                        <span class="text-sm text-gray-600">R$10</span>
-                    </div>
-                    <div class="text-center flex flex-col items-center justify-start group"> <img src="6B63F881-F75D-4A91-A5D0-6825F0588224.jpg" alt="Brincos de raio" loading="lazy" class="mb-3 new-arrivals-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f] font-semibold">Brinco</p>
-                        <span class="text-sm text-gray-600">R$10</span>
-                    </div>
-                    <div class="text-center flex flex-col items-center justify-start group"> <img src="anel.png" alt="Anel" loading="lazy" class="mb-3 new-arrivals-img-final transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" /> <p class="text-lg text-[#2f2f2f] font-semibold">Anel</p>
-                        <span class="text-sm text-gray-600">R$10</span>
-                    </div>
-                </div>
+        <section class="py-16 bg-[#f8f8f8] grid md:grid-cols-2 items-center gift-section-height-final overflow-hidden" id="sobre">
+            <div class="p-8 md:p-12 text-left">
+                <h3 class="text-3xl lg:text-4xl font-joanna font-bold mb-5 md:mb-6 leading-tight text-[#2f2f2f]">Surpreenda quem você ama com um presente especial.</h3>
+                <a href="#" class="underline text-lg hover:text-[var(--cor-destaque)] transition-colors duration-200">você escolhe, nós embalamos com carinho.</a>
             </div>
-            <div class="border-b border-black mt-16 mx-auto max-w-screen-xl"></div>
-        </div>
-    </section>
-
-    <section class="bg-[#f1eee9] pt-16 pb-0">
-        <div class="max-w-screen-xl mx-auto px-4 md:px-6">
-            <h3 class="text-3xl font-joanna font-bold mb-4 text-left">Inspire-se</h3>
-            <p class="mb-10 text-left text-gray-700 text-base">Marque-nos em sua foto para ter a chance de ser destacado.</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-5">
-            <div class="relative overflow-hidden group">
-                <img src="mulherusandocolar.webp" alt="Mulher usando um colar" loading="lazy" class="w-full h-auto object-cover inspiration-img-final" />
+            <div class="relative overflow-hidden h-full group">
+                <img src="imagens/banner2.JPG" alt="Caixas de presente elegantemente embaladas" loading="lazy" class="w-full h-full object-cover transition-colors duration-300" />
                 <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </div>
-            <div class="relative overflow-hidden group">
-                <img src="mulherusandocolar.webp" alt="Mulher usando vários colares" loading="lazy" class="w-full h-auto object-cover inspiration-img-final" />
-                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        </section>
+
+        <section class="py-16 bg-white" id="tendencias">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-6">
+                <h3 class="text-3xl font-joanna font-bold mb-10 text-left flex items-center justify-between">
+                    Novas Chegadas
+                    <a href="todos-os-produtos.html" class="text-sm uppercase tracking-wider text-gray-600 hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Ver todos os produtos</a>
+                </h3>
+                <div id="new-arrivals-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+                <div class="border-b border-black mt-16 mx-auto"></div>
             </div>
-            <div class="relative overflow-hidden group">
-                <img src="mulherusandocolar.webp" alt="Close-up de uma mão com anéis e pulseira" loading="lazy" class="w-full h-auto object-cover inspiration-img-final" />
-                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        </section>
+
+        <section class="bg-[#f1eee9] pt-16 pb-0">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-6">
+                <h3 class="text-3xl font-joanna font-bold mb-4 text-left">Inspire-se</h3>
+                <p class="mb-10 text-left text-gray-700 text-base">Marque-nos em sua foto para ter a chance de ser destacado.</p>
             </div>
-            <div class="relative overflow-hidden group">
-                <img src="mulherusandocolar.webp" alt="Mulher olhando para longe, exibindo brincos" loading="lazy" class="w-full h-auto object-cover inspiration-img-final" />
-                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            <div class="grid grid-cols-2 md:grid-cols-5">
+                <img src="imagens/mulherusandocolar.webp" alt="Inspiração 1" class="w-full h-auto object-cover inspiration-img-final">
+                <img src="imagens/mulherusandocolar.webp" alt="Inspiração 2" class="w-full h-auto object-cover inspiration-img-final">
+                <img src="imagens/mulherusandocolar.webp" alt="Inspiração 3" class="w-full h-auto object-cover inspiration-img-final">
+                <img src="imagens/mulherusandocolar.webp" alt="Inspiração 4" class="w-full h-auto object-cover inspiration-img-final">
+                <img src="imagens/mulherusandocolar.webp" alt="Inspiração 5" class="w-full h-auto object-cover inspiration-img-final">
             </div>
-            <div class="relative overflow-hidden group">
-                <img src="mulherusandocolar.webp" alt="Imagem de inspiração" loading="lazy" class="w-full h-auto object-cover inspiration-img-final" />
-                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="footer-custom bg-[#e4e0d9]">
-        <div class="max-w-screen-xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-start">
-            <div class="flex flex-col md:flex-row justify-between w-full md:w-auto md:space-x-12">
-                <div class="footer-col-group mb-6 md:mb-0">
-                    <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Loja</h4>
-                    <nav aria-label="Links da Loja">
-                        <ul class="space-y-1 text-xs text-gray-700">
-                            <li><a href="brincos.html" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Brincos</a></li>
-                            <li><a href="colares.html" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Colares</a></li>
-                            <li><a href="aneis.html" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Anéis</a></li>
-                            <li><a href="pulseiras.html" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Pulseiras</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="footer-col-group mb-6 md:mb-0">
-                    <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Info</h4>
-                    <nav aria-label="Links de Informação">
-                        <ul class="space-y-1 text-xs text-gray-700">
-                            <li><a href="#" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Sobre Nós</a></li>
-                            <li><a href="#" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Contato</a></li>
-                            <li><a href="#" class="hover:underline hover:text-[#b58e65] transition-colors duration-200">Envio & Devoluções</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="footer-col-group mb-6 md:mb-0">
-                    <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Social</h4>
-                    <nav aria-label="Links de Redes Sociais">
-                        <ul class="space-y-1 text-xs text-gray-700">
-                            <li><a href="https://instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-[#b58e65] transition-colors duration-200" aria-label="Siga-nos no Instagram"><i class="fab fa-instagram mr-2"></i>Instagram</a></li>
-                         </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="flex flex-col w-full md:w-1/3 md:text-right mt-8 md:mt-0 md:ml-auto">
-                <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Junte-se à nossa comunidade.</h4>
-                <p class="mb-4 text-xs text-gray-700">Cadastre-se para receber promoções e lançamentos!</p>
-                <form class="flex flex-col gap-2 w-full md:ml-auto" onsubmit="handleSubscription(event)">
-                    <label for="email-subscribe" class="sr-only">Seu endereço de e-mail</label>
-                    <input type="email" id="email-subscribe" name="email" placeholder="Email" class="px-3 py-2 text-black bg-white border border-gray-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#b58e65] placeholder-gray-500 text-xs" aria-required="true" required />
-                    <button type="submit" class="bg-[#2f2f2f] text-white px-3 py-2 font-semibold rounded-sm transition-colors duration-300 hover:bg-gray-800 text-xs uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-[#2f2f2f] focus:ring-opacity-75">Inscrever-se</button>
-                </form>
-                <p id="subscription-message" class="mt-3 text-xs text-center md:text-right"></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom-bar bg-[#b09f8d] py-4 px-4 md:px-6 text-xs text-gray-700 flex flex-col md:flex-row justify-between items-center w-full">
-            <p class="mb-2 md:mb-0">&copy; <span id="current-year"></span> Nour Luz. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-[#b58e65] text-white p-3 rounded-full shadow-lg hover:bg-[#a07c57] transition-all duration-300 ease-in-out opacity-0 translate-y-4 pointer-events-none z-40" aria-label="Voltar ao topo">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    <div id="footer-placeholder"></div>
+    
+    <script src="js/products.js"></script>
+    <script src="js/layout.js"></script>
     <script>
-        // Função para simular o cadastro de email
-        function handleSubscription(event) {
-            event.preventDefault(); // Previne o recarregamento da página
-            const emailInput = document.getElementById('email-subscribe');
-            const messageElement = document.getElementById('subscription-message');
-            const email = emailInput.value;
-
-            if (email) {
-                // Aqui você integraria com um serviço de e-mail marketing real
-                // Por exemplo, uma requisição AJAX para sua API de Mailchimp/MailerLite
-                console.log(`Email cadastrado: ${email}`);
-                messageElement.textContent = 'Obrigado por se cadastrar! Você receberá nossas promoções em breve.';
-                messageElement.className = 'mt-3 text-xs text-center md:text-right text-green-600'; // Cor para sucesso
-                emailInput.value = ''; // Limpa o campo
-            } else {
-                messageElement.textContent = 'Por favor, insira um e-mail válido.';
-                messageElement.className = 'mt-3 text-xs text-center md:text-right text-red-600'; // Cor para erro
-            }
-        }
-
-        // Script para o botão "Voltar ao topo"
-        const backToTopButton = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) { // Mostra o botão após rolar 300px
-                backToTopButton.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-                backToTopButton.classList.add('opacity-100', 'translate-y-0');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
-                backToTopButton.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        document.addEventListener('DOMContentLoaded', () => {
+            const newArrivalsGrid = document.getElementById('new-arrivals-grid');
+            if (newArrivalsGrid) {
+                // Pega os 4 primeiros produtos para serem os destaques
+                const featuredProducts = products.slice(0, 4); 
+                
+                newArrivalsGrid.innerHTML = featuredProducts.map(product => `
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
+                        <a href="${product.category}.html" class="block">
+                            <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
+                        </a>
+                        <div class="p-6 text-center">
+                            <p class="text-gray-800 text-base mb-2">${product.name}</p>
+                            <span class="text-xl font-semibold text-[var(--cor-texto)]">${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                        </div>
+                    </div>
+                `).join('');
             }
         });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Rolagem suave
-            });
-        });
-
-        // Atualizar ano no rodapé
-        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
