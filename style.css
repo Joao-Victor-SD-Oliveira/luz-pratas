@@ -1,10 +1,5 @@
 /*
   Descrição: Folha de estilos principal do site.
-  
-  Melhorias implementadas:
-  - Variáveis CSS (Custom Properties): Para facilitar a manutenção do tema.
-  - Melhoras de Interatividade: Transições suaves e feedback visual em elementos interativos.
-  - Rolagem Suave: Comportamento de rolagem suave para navegação na página.
 */
 
 /* Definição das variáveis globais de estilo */
@@ -16,7 +11,6 @@
   --cor-sombra-card: rgba(181, 142, 101, 0.2);
 }
 
-/* NOVA REGRA PARA ROLAGEM SUAVE */
 html {
   scroll-behavior: smooth;
 }
@@ -29,6 +23,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   overflow-x: hidden;
+  /* A opacidade inicial 0 é necessária para o efeito de fade-in funcionar */
+  opacity: 0;
 }
 
 @font-face {
@@ -46,41 +42,35 @@ body {
   font-family: 'Joanna', serif;
 }
 
-/* Estilos para os cards de produto das páginas de categoria */
+/* Estilos para os cards de produto */
 .product-card {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .product-card:hover {
-  transform: translateY(-8px); /* Efeito de "elevar" o card mais pronunciado */
+  transform: translateY(-8px);
   box-shadow: 0 10px 20px var(--cor-sombra-card);
 }
-
 .product-card img {
     transition: transform 0.3s ease-in-out;
 }
-
 .product-card:hover img {
-    transform: scale(1.03); /* Leve zoom na imagem ao passar o mouse */
+    transform: scale(1.03);
 }
 
 /* Melhoria no botão de compra */
 .buy-button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .buy-button:hover {
-    transform: scale(1.05); /* Leve crescimento do botão ao passar o mouse */
+    transform: scale(1.05);
 }
 
-
 /* -- Seção de Estilos do index.html -- */
-
 .hero-section-height-final { height: 600px; }
 .popular-category-img-final { width: 250px; height: 250px; object-fit: contain; }
 .gift-section-height-final { height: 400px; }
 .new-arrivals-img-final { width: 250px; height: 250px; object-fit: contain; }
 .inspiration-img-final { height: 400px; object-fit: cover; }
-
 
 /* -- Estilos do Rodapé -- */
 footer {
@@ -88,7 +78,6 @@ footer {
   font-size: 0.75rem;
   width: 100%;
 }
-
 .footer-bottom-bar {
   background-color: #b09f8d;
   color: #2f2f2f;
@@ -97,33 +86,28 @@ footer {
   width: 100%;
 }
 
-/* --- ESTILOS PARA TRANSIÇÃO DE PÁGINA --- */
+/* --- ESTILOS PARA TRANSIÇÃO DE PÁGINA (CORRIGIDO) --- */
 
-/* Animação de Fade In (Surgimento) COM LEVE DESLIZE */
+/* Animação de Fade In (Surgimento) SEM DESLIZE */
 @keyframes fadeIn {
   from { 
     opacity: 0;
-    transform: translateY(15px); /* Começa 15px abaixo */
   }
   to { 
     opacity: 1;
-    transform: translateY(0); /* Termina na posição original */
   }
 }
 
-/* Animação de Fade Out (Desaparecimento) COM LEVE DESLIZE */
+/* Animação de Fade Out (Desaparecimento) SEM DESLIZE */
 @keyframes fadeOut {
   from { 
     opacity: 1;
-    transform: translateY(0); /* Começa na posição original */
   }
   to { 
     opacity: 0;
-    transform: translateY(15px); /* Termina 15px abaixo */
   }
 }
 
-/* O resto do CSS permanece o mesmo... */
 .body-fade-in {
   animation: fadeIn 0.4s ease-in-out forwards;
 }
@@ -132,41 +116,23 @@ footer {
   animation: fadeOut 0.4s ease-in-out forwards;
 }
 
-body {
-  opacity: 0;
-}
-
 /* --- ESTILO PARA O LINK DE NAVEGAÇÃO ATIVO --- */
-
 a.active-link {
-  /* Define a cor do texto para a cor de destaque (bege) */
   color: var(--cor-destaque);
-  /* Adiciona o sublinhado permanente */
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
-  text-underline-offset: 4px; /* Distância do sublinhado ao texto */
+  text-underline-offset: 4px;
 }
-
-/* Remove qualquer efeito de hover adicional do link que já está ativo */
 a.active-link:hover {
-  /* Garante que a cor e o sublinhado não mudem ao passar o mouse */
   color: var(--cor-destaque);
   text-decoration: underline;
 }
-
-/* Para o menu mobile, aplica a cor e o destaque */
 #mobile-nav-links a.active-link {
     color: var(--cor-destaque);
-    font-weight: 600; /* Mantém em negrito para maior destaque */
-    /* Opcional: pode-se adicionar o sublinhado aqui também se desejar */
-    /* text-decoration: underline; */
+    font-weight: 600;
 }
 
-/*
-  Este código aplica uma margem superior de 100px a todas as seções
-  que possuem um ID. Essa margem só é considerada durante a rolagem da página,
-  garantindo que o conteúdo da seção não fique escondido atrás do header fixo.
-*/
+/* Garante que o conteúdo não fique escondido atrás do header fixo durante a navegação por âncoras */
 section[id] {
-  scroll-margin-top: 100px; /* Ajuste este valor se a altura do seu header mudar */
+  scroll-margin-top: 100px;
 }

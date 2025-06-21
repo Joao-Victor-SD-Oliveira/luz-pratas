@@ -1,19 +1,11 @@
 /*
   Descrição: Este script implementa funcionalidades globais de layout.
-
-  - Carregamento de Componentes: Carrega header e footer.
-  - Renderização de Produtos: Função centralizada para exibir produtos.
-  - Navegação Dinâmica: Monta os links do header de forma consistente.
-  - Menu Mobile: Controla a abertura e fechamento do menu.
-  - Transições de Página: Animações suaves ao navegar.
 */
 
-// Função global para renderizar produtos. Centralizada para fácil manutenção.
 const renderProducts = (category) => {
     const productGrid = document.getElementById('product-grid');
     if (!productGrid) return;
 
-    // Se uma categoria é fornecida, filtra os produtos. Caso contrário, usa todos (para uma página "Loja Completa").
     const filteredProducts = category ? products.filter(p => p.category === category) : products;
 
     productGrid.innerHTML = filteredProducts.map(product => `
@@ -35,7 +27,6 @@ const renderProducts = (category) => {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Função para carregar componentes HTML (header, footer)
     const loadComponent = async (selector, url) => {
         try {
             const response = await fetch(url);
@@ -48,23 +39,38 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Lógica do menu mobile
     const initializeMobileMenu = () => {
         const menuButton = document.getElementById('menu-button');
         const closeMenuButton = document.getElementById('close-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton && closeMenuButton && mobileMenu) {
-            menuButton.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-            closeMenuButton.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+
+        if (menuButton && closeMenuButton && mobileMenu && backdrop) {
+            const openMenu = () => {
+                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                backdrop.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeMenu = () => {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('-translate-x-full');
+                backdrop.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            menuButton.addEventListener('click', openMenu);
+            closeMenuButton.addEventListener('click', closeMenu);
+            backdrop.addEventListener('click', closeMenu);
         }
     };
     
-    // Cria a navegação de forma dinâmica e consistente
+    // FUNÇÃO CORRIGIDA PARA NÃO DEPENDER UM MENU DO OUTRO
     const initializeDynamicHeader = () => {
         const desktopNav = document.getElementById('desktop-nav-links');
-        const mobileNav = document.getElementById('mobile-nav-links');
-        if (!desktopNav || !mobileNav) return;
-
+        const mobileNav = document.getElementById('mobile-nav-links'); 
+        
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         
         const navLinks = [
@@ -76,20 +82,28 @@ document.addEventListener("DOMContentLoaded", function() {
             { name: 'Pulseiras', href: 'pulseiras.html' }
         ];
 
-        // Cria os links para o menu desktop
-        desktopNav.innerHTML = navLinks
-            .filter(link => link.href !== currentPage) // Não mostra o link da página atual
-            .map(link => `<a href="${link.href}" class="hover:text-[var(--cor-destaque)] hover:underline transition-colors duration-200">${link.name}</a>`)
-            .join('');
+        // Cria os links do menu para PC (se o container existir)
+        if (desktopNav) {
+            desktopNav.innerHTML = navLinks
+                .map(link => {
+                    const isCurrentPage = link.href === currentPage;
+                    const linkClass = isCurrentPage 
+                        ? 'text-[var(--cor-destaque)] font-semibold' 
+                        : 'hover:text-[var(--cor-destaque)] transition-colors duration-200';
+                    return `<a href="${link.href}" class="${linkClass}">${link.name}</a>`;
+                })
+                .join('');
+        }
 
-        // Cria os links para o menu mobile
-        mobileNav.innerHTML = navLinks.map(link => {
-            const isActiveClass = link.href === currentPage ? 'active-link' : '';
-            return `<a href="${link.href}" class="text-gray-600 hover:text-[#2f2f2f] text-lg uppercase ${isActiveClass}">${link.name}</a>`;
-        }).join('');
+        // Cria os links do menu para Celular (se o container existir)
+        if (mobileNav) {
+            mobileNav.innerHTML = navLinks.map(link => {
+                const isActiveClass = link.href === currentPage ? 'text-[var(--cor-destaque)] font-bold' : 'text-gray-700';
+                return `<a href="${link.href}" class="block py-2 ${isActiveClass} hover:text-[var(--cor-destaque)] text-lg uppercase">${link.name}</a>`;
+            }).join('');
+        }
     };
 
-    // Efeito de transição suave entre páginas
     const initializePageTransitions = () => {
         document.body.classList.add('body-fade-in');
         document.body.addEventListener('click', function(event) {
@@ -104,20 +118,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
-    // Função principal que orquestra a inicialização do layout
     const initializeLayout = async () => {
         const headerPlaceholder = document.getElementById('header-placeholder');
-        if(headerPlaceholder) {
-            headerPlaceholder.classList.add('sticky', 'top-0', 'z-50', 'w-full');
+        if (headerPlaceholder) {
+            headerPlaceholder.classList.add('sticky', 'top-0', 'z-30', 'w-full');
         }
         
-        // Carrega header e footer em paralelo
         await Promise.all([
             loadComponent('#header-placeholder', 'header.html'),
             loadComponent('#footer-placeholder', 'footer.html')
         ]);
         
-        // Inicializa os scripts que dependem do header/footer
         initializeDynamicHeader();
         initializeMobileMenu();
         initializePageTransitions();
