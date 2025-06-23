@@ -97,6 +97,7 @@
                 <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </div>
         </section>
+
         <section class="py-16 bg-white" id="tendencias">
             <div class="max-w-screen-xl mx-auto px-4 md:px-6">
                 <h3 class="text-3xl font-joanna font-bold mb-10 text-left flex items-center justify-between">
@@ -127,9 +128,27 @@
         document.addEventListener('DOMContentLoaded', () => {
             const newArrivalsGrid = document.getElementById('new-arrivals-grid');
             if (newArrivalsGrid) {
-                // Pega os 4 primeiros produtos para serem os destaques
-                const featuredProducts = products.slice(0, 4); 
+                // *** NOVA LÓGICA PARA SELECIONAR PRODUTOS ***
+
+                // 1. Define as 4 categorias principais que queremos mostrar.
+                const categoriesToShow = ['brincos', 'colares', 'aneis', 'pulseiras'];
                 
+                // 2. Cria um objeto para armazenar o último produto encontrado de cada categoria.
+                const latestProductByCategory = {};
+
+                // 3. Percorre toda a lista de produtos. Como a lista está em ordem de adição,
+                // o último produto de uma categoria substituirá qualquer um anterior da mesma categoria.
+                for (const product of products) {
+                    if (categoriesToShow.includes(product.category)) {
+                        latestProductByCategory[product.category] = product;
+                    }
+                }
+
+                // 4. Cria a lista final de produtos em destaque, na ordem definida em 'categoriesToShow'.
+                // O .filter(Boolean) remove qualquer categoria que porventura não tenha produtos.
+                const featuredProducts = categoriesToShow.map(cat => latestProductByCategory[cat]).filter(Boolean);
+                
+                // 5. Renderiza os produtos encontrados na tela.
                 newArrivalsGrid.innerHTML = featuredProducts.map(product => `
                     <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
                         <a href="${product.category}.html" class="block">

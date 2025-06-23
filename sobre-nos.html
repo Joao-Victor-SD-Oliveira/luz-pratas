@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós | Luz Joias</title>
+    <meta name="description" content="Conheça a história e a inspiração por trás da Luz Joias, uma marca criada para iluminar vidas e inspirar histórias.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f1eee9] text-[#2f2f2f]">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="bg-white py-24 sm:py-32">
+            <div class="max-w-screen-md mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-joanna font-bold mb-12 text-[#2f2f2f]">Nossa História</h1>
+                <div class="text-lg md:text-xl text-gray-700 leading-relaxed space-y-8">
+                    <p>
+                        Sempre sonhei em criar algo que fosse além de vender um produto — eu queria espalhar um sentimento.
+                    </p>
+                    <p>
+                        Há muito tempo, carrego o desejo de construir algo que trouxesse significado, que fosse capaz de iluminar
+                        vidas e inspirar histórias.
+                    </p>
+                    <p>
+                        Por anos, eu guardei esse sonho no papel, duvidando da minha capacidade. Mas chegou a hora de acreditar,
+                        mesmo com medo.
+                    </p>
+                    <p>
+                        A Luz representa minha vontade de crescer, de florescer, de transformar a minha realidade e, acima de tudo,
+                        reconhecer a força e a feminilidade que existem em mim.
+                    </p>
+                    <p>
+                        Pratas delicadas, femininas e cheias de significado — feitas para mulheres que, como eu, carregam sonhos e
+                        luz dentro de si.
+                    </p>
+                    <p class="font-semibold text-[var(--cor-texto)] mt-8">
+                        Se você chegou até aqui, saiba que você também faz parte dessa história.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full bg-white z-50 w-72 shadow-lg p-6 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold font-joanna text-[var(--cor-texto)]">Categorias</h2>
+            <button id="close-menu-button" class="text-gray-600 hover:text-[var(--cor-texto)] focus:outline-none" aria-label="Fechar menu de navegação">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav-links" class="flex flex-col space-y-4"></nav>
+    </div>
+    <div id="mobile-menu-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-60 z-40 md:hidden"></div>
+    <script src="js/products.js"></script>
+    <script src="js/layout.js"></script>
+</body>
+</html>
