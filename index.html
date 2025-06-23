@@ -122,36 +122,36 @@
         <nav id="mobile-nav-links" class="flex flex-col space-y-4"></nav>
     </div>
     <div id="mobile-menu-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-60 z-40 md:hidden"></div>
+    
     <script src="js/products.js"></script>
     <script src="js/layout.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const newArrivalsGrid = document.getElementById('new-arrivals-grid');
             if (newArrivalsGrid) {
-                // *** NOVA LÓGICA PARA SELECIONAR PRODUTOS ***
+                // *** LÓGICA CORRIGIDA PARA O NOVO FORMATO DE CATEGORIAS ***
 
-                // 1. Define as 4 categorias principais que queremos mostrar.
                 const categoriesToShow = ['brincos', 'colares', 'aneis', 'pulseiras'];
-                
-                // 2. Cria um objeto para armazenar o último produto encontrado de cada categoria.
                 const latestProductByCategory = {};
 
-                // 3. Percorre toda a lista de produtos. Como a lista está em ordem de adição,
-                // o último produto de uma categoria substituirá qualquer um anterior da mesma categoria.
+                // 1. Percorre toda a lista de produtos
                 for (const product of products) {
-                    if (categoriesToShow.includes(product.category)) {
-                        latestProductByCategory[product.category] = product;
+                    // 2. Para cada produto, percorre sua LISTA de categorias
+                    for (const categoryOfProduct of product.category) {
+                        // 3. Verifica se a categoria do produto é uma das que queremos mostrar
+                        if (categoriesToShow.includes(categoryOfProduct)) {
+                            // 4. Armazena o produto como o mais recente para aquela categoria.
+                            // Se outro produto da mesma categoria aparecer depois na lista, ele será substituído.
+                            latestProductByCategory[categoryOfProduct] = product;
+                        }
                     }
                 }
-
-                // 4. Cria a lista final de produtos em destaque, na ordem definida em 'categoriesToShow'.
-                // O .filter(Boolean) remove qualquer categoria que porventura não tenha produtos.
+                
                 const featuredProducts = categoriesToShow.map(cat => latestProductByCategory[cat]).filter(Boolean);
                 
-                // 5. Renderiza os produtos encontrados na tela.
                 newArrivalsGrid.innerHTML = featuredProducts.map(product => `
                     <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
-                        <a href="${product.category}.html" class="block">
+                        <a href="${product.category[0]}.html" class="block">
                             <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
                         </a>
                         <div class="p-6 text-center">

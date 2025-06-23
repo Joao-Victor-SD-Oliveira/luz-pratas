@@ -2,11 +2,17 @@
   Descrição: Este script implementa funcionalidades globais de layout.
 */
 
+// FUNÇÃO ATUALIZADA PARA LER A LISTA DE CATEGORIAS
 const renderProducts = (category) => {
     const productGrid = document.getElementById('product-grid');
     if (!productGrid) return;
 
-    const filteredProducts = category ? products.filter(p => p.category === category) : products;
+    // LÓGICA DE FILTRO MODIFICADA AQUI
+    // Se uma categoria for fornecida, filtra os produtos cuja lista de categorias INCLUI a categoria da página.
+    // Caso contrário (página "Loja"), usa todos os produtos.
+    const filteredProducts = category 
+        ? products.filter(p => p.category.includes(category)) 
+        : products;
 
     productGrid.innerHTML = filteredProducts.map(product => `
         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden">
