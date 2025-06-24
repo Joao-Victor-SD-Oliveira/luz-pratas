@@ -159,7 +159,7 @@ const products = [
     },
     { 
         id: 20, 
-        category: ['brincos'], 
+        category: ['brincos'],
         name: 'Brinco Argola - M', 
         price: 52.90, 
         image: 'imagens/Brinco M - Prata 925.jpg', 

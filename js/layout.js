@@ -2,14 +2,10 @@
   Descrição: Este script implementa funcionalidades globais de layout.
 */
 
-// FUNÇÃO ATUALIZADA PARA LER A LISTA DE CATEGORIAS
 const renderProducts = (category) => {
     const productGrid = document.getElementById('product-grid');
     if (!productGrid) return;
 
-    // LÓGICA DE FILTRO MODIFICADA AQUI
-    // Se uma categoria for fornecida, filtra os produtos cuja lista de categorias INCLUI a categoria da página.
-    // Caso contrário (página "Loja"), usa todos os produtos.
     const filteredProducts = category 
         ? products.filter(p => p.category.includes(category)) 
         : products;
@@ -78,13 +74,15 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         
+        // ***** LINK DE ASSINATURAS ADICIONADO AQUI *****
         const navLinks = [
             { name: 'Início', href: 'index.html' },
             { name: 'Loja', href: 'todos-os-produtos.html' },
             { name: 'Brincos', href: 'brincos.html' },
             { name: 'Colares', href: 'colares.html' },
             { name: 'Anéis', href: 'aneis.html' },
-            { name: 'Pulseiras', href: 'pulseiras.html' }
+            { name: 'Pulseiras', href: 'pulseiras.html' },
+            { name: 'Assinaturas', href: 'assinaturas.html' }
         ];
 
         if (desktopNav) {

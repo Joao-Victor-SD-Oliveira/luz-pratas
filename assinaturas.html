@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planos de Assinatura | Luz Joias</title>
+    <meta name="description" content="Escolha um de nossos planos de assinatura e receba joias exclusivas em sua casa todos os meses.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f1eee9] text-[#2f2f2f]">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="bg-white pt-32 pb-24 px-6 md:px-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#2f2f2f] leading-tight mb-4 uppercase">Nossos Planos de Assinatura</h1>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">Receba joias cuidadosamente selecionadas em sua casa todos os meses e surpreenda-se.</p>
+        </section>
+
+        <section class="py-16 bg-[#f8f8f8]">
+            <div class="max-w-screen-xl mx-auto px-4 md:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="imagens/Plano NOUR Essencial .PNG" alt="Plano NOUR Essencial: R$219,90 por mês. Inclui 4 peças em prata 925 com frete grátis." class="w-full h-auto">
+                        <div class="p-6">
+                            <a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20gostaria%20de%20assinar%20o%20plano%20NOUR%20ESSENCIAL" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--cor-destaque)] text-white py-3 px-8 font-semibold transition-colors duration-300 text-sm uppercase tracking-wider rounded-md hover:bg-[var(--cor-destaque-hover)]">
+                                Assinar Agora
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="imagens/NOUR elegância .PNG" alt="Plano NOUR Elegância: R$319,90 por mês. Inclui 6 peças em prata 925 com frete grátis." class="w-full h-auto">
+                        <div class="p-6">
+                            <a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20gostaria%20de%20assinar%20o%20plano%20NOUR%20ELEG%C3%82NCIA" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--cor-destaque)] text-white py-3 px-8 font-semibold transition-colors duration-300 text-sm uppercase tracking-wider rounded-md hover:bg-[var(--cor-destaque-hover)]">
+                                Assinar Agora
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="imagens/C4B83781-3282-414B-9442-2EF8172DBBEA.PNG" alt="Plano NOUR Luxo: R$469,90 por mês. Inclui 9 peças em prata 925 com frete grátis." class="w-full h-auto">
+                        <div class="p-6">
+                            <a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20gostaria%20de%20assinar%20o%20plano%20NOUR%20LUXO" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[var(--cor-destaque)] text-white py-3 px-8 font-semibold transition-colors duration-300 text-sm uppercase tracking-wider rounded-md hover:bg-[var(--cor-destaque-hover)]">
+                                Assinar Agora
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full bg-white z-50 w-72 shadow-lg p-6 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold font-joanna text-[var(--cor-texto)]">Categorias</h2>
+            <button id="close-menu-button" class="text-gray-600 hover:text-[var(--cor-texto)] focus:outline-none" aria-label="Fechar menu de navegação">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav id="mobile-nav-links" class="flex flex-col space-y-4"></nav>
+    </div>
+    <div id="mobile-menu-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-60 z-40 md:hidden"></div>
+    <script src="js/products.js"></script>
+    <script src="js/layout.js"></script>
+</body>
+</html>
