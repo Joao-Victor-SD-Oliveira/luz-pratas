@@ -49,7 +49,7 @@ const products = [
         id: 6, 
         category: ['colares'], 
         name: 'Colar com Pingente de Trevo', 
-        price: 35.00, 
+        price: 45.00, 
         image: 'imagens/colartrevo.jpg', 
         alt: 'Colar com Pingente de Trevo' 
     },
@@ -270,5 +270,86 @@ const products = [
         price: 69.90, 
         image: 'imagens/Pulseira Coração Infinito - Prata 925.jpg', 
         alt: 'Pulseira de prata com símbolo de coração e infinito' 
+    },
+    { 
+        id: 34, 
+        category: ['colares'], 
+        name: 'Colar Coração', 
+        price: 45.00, 
+        image: 'imagens/colar coracao.JPG', 
+        alt: 'Colar Coração' 
+    },
+     { 
+        id: 35, 
+        category: ['colares'], 
+        name: 'Colar Minimalista', 
+        price: 94.90, 
+        image: 'imagens/colar minimalista.JPG', 
+        alt: 'Colar Minimalista' 
+    },
+     { 
+        id: 36, 
+        category: ['brincos'], 
+        name: 'Kit Brinco Pedrinhas', 
+        price: 35.00, 
+        image: 'imagens/kit brinco pedrinha.JPG', 
+        alt: 'Kit Brinco Pedrinhas' 
+    },
+
+    { 
+        id: 37, 
+        category: ['brincos'], 
+        name: 'Trio de Brincos', 
+        price: 25.80, 
+        image: 'imagens/trio de brincos.JPG', 
+        alt: 'Trio de Brincos' 
+    },
+    { 
+        id: 38, 
+        category: ['brincos'], 
+        name: 'Brinco Lacinho', 
+        price: 30.00, 
+        image: 'imagens/brinco lacinho.JPG', 
+        alt: 'Brinco Lacinho' 
+    },
+    { 
+        id: 39, 
+        category: ['brincos'], 
+        name: 'Brinco Raio', 
+        price: 30.00, 
+        image: 'imagens/brinco raio.JPG', 
+        alt: 'Brinco Raio' 
+    },
+    { 
+        id: 40, 
+        category: ['brincos'], 
+        name: 'Conjunto Brinco Coração', 
+        price: 36.60, 
+        image: 'imagens/conjunto brinco coracao.JPG', 
+        alt: 'Conjunto Brinco Coração' 
+    },
+    { 
+        id: 41, 
+        category: ['brincos'], 
+        name: 'Brinco Gota de Zircônias', 
+        price: 36.60, 
+        image: 'imagens/brinco gota de zinconia.JPG', 
+        alt: 'Brinco Gota de Zircônias' 
+    },
+    { 
+        id: 42, 
+        category: ['brincos'], 
+        name: 'Trio de Brinco Argola', 
+        price: 37.80, 
+        image: 'imagens/trio de brinco argola.JPG', 
+        alt: 'Trio de Brinco Argola' 
+    },
+    { 
+        id: 43, 
+        category: ['colares'], 
+        name: 'Colar de Cruz', 
+        price: 50.00, 
+        image: 'imagens/colar de cruz.JPG', 
+        alt: 'Colar de Cruz' 
     },
 ];
