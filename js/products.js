@@ -251,7 +251,7 @@ const products = [
         category: ['colares', 'pulseiras'],
         name: 'Conjunto Fases da Lua Colar + Pulseira', 
         price: 219.00, 
-        image: 'imagens/Conjunto Fases da Lua - Prata 925.jpg', 
+        image: 'imagens/Colar Fases da Lua - Prata 925.JPG', 
         alt: 'Conjunto Fases da Lua' 
     }, 
     { 

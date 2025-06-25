@@ -1,0 +1,16 @@
+{
+  "name": "projeto-site-chay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind:init": "tailwindcss init",
+    "tailwind:build": "tailwindcss -i ./input.css -o ./style.css --watch --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}

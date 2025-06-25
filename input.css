@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Seus estilos customizados (o conteúdo do style.css antigo) vão aqui */
+:root {
+  --cor-fundo: #f1eee9;
+  --cor-texto: #2f2f2f;
+  --cor-destaque: #b58e65;
+  --cor-destaque-hover: #a07c57;
+  --cor-sombra-card: rgba(181, 142, 101, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Joanna', serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* A opacidade inicial 0 é necessária para o efeito de fade-in funcionar */
+  opacity: 0;
+}
+
+@font-face {
+  font-family: 'Joanna';
+  src: local('Joanna Regular'), local('Joanna-Regular'),
+       url('JoannaMTStd.woff2') format('woff2'),
+       url('JoannaMTStd.woff') format('woff'),
+       url('JoannaMTStd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-joanna {
+  font-family: 'Joanna', serif;
+}
+
+/* Estilos para os cards de produto */
+.product-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px var(--cor-sombra-card);
+}
+.product-card img {
+    transition: transform 0.3s ease-in-out;
+}
+.product-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Melhoria no botão de compra */
+.buy-button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.buy-button:hover {
+    transform: scale(1.05);
+}
+
+/* -- Seção de Estilos do index.html -- */
+.hero-section-height-final { height: 600px; }
+.popular-category-img-final { width: 250px; height: 250px; object-fit: contain; }
+.gift-section-height-final { height: 400px; }
+.new-arrivals-img-final { width: 250px; height: 250px; object-fit: contain; }
+.inspiration-img-final { height: 400px; object-fit: cover; }
+
+/* -- Estilos do Rodapé -- */
+footer {
+  background-color: #d4c7bb;
+  font-size: 0.75rem;
+  width: 100%;
+}
+.footer-bottom-bar {
+  background-color: #b09f8d;
+  color: #2f2f2f;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+/* --- ESTILOS PARA TRANSIÇÃO DE PÁGINA (CORRIGIDO) --- */
+
+/* Animação de Fade In (Surgimento) SEM DESLIZE */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1;
+  }
+}
+
+/* Animação de Fade Out (Desaparecimento) SEM DESLIZE */
+@keyframes fadeOut {
+  from { 
+    opacity: 1;
+  }
+  to { 
+    opacity: 0;
+  }
+}
+
+.body-fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.body-fade-out {
+  animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+/* --- ESTILO PARA O LINK DE NAVEGAÇÃO ATIVO --- */
+a.active-link {
+  color: var(--cor-destaque);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+a.active-link:hover {
+  color: var(--cor-destaque);
+  text-decoration: underline;
+}
+#mobile-nav-links a.active-link {
+    color: var(--cor-destaque);
+    font-weight: 600;
+}
+
+/* Garante que o conteúdo não fique escondido atrás do header fixo durante a navegação por âncoras */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* --- CLASSE DE SEGURANÇA PARA ÍCONES SVG --- */
+.icon-svg {
+  width: 1.5rem;  /* Equivalente a classe w-6 do Tailwind */
+  height: 1.5rem; /* Equivalente a classe h-6 do Tailwind */
+}
