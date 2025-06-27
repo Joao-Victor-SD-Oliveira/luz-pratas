@@ -6,14 +6,6 @@
 
 const products = [
     { 
-        id: 1, 
-        category: ['brincos'], 
-        name: 'Kit 2 Brincos Prata 925 com Zircônia', 
-        price: 25.00, 
-        image: 'imagens/Kit 2 Brincos Prata 925 com Zircônia – Brilho, Elegância e Versatilidade.jpg', 
-        alt: 'Kit 2 Brincos Prata 925 com Zircônia' 
-    },
-    { 
         id: 2, 
         category: ['brincos'], 
         name: 'Brinco Ondinha em Prata 925', 
