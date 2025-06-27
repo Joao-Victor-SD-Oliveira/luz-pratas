@@ -23,8 +23,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   overflow-x: hidden;
-  /* A opacidade inicial 0 é necessária para o efeito de fade-in funcionar */
-  opacity: 0;
 }
 
 @font-face {
@@ -141,4 +139,11 @@ section[id] {
 .icon-svg {
   width: 1.5rem;  /* Equivalente a classe w-6 do Tailwind */
   height: 1.5rem; /* Equivalente a classe h-6 do Tailwind */
+}
+
+/* --- ESTILO PARA A NOTIFICAÇÃO (TOAST) --- */
+#add-to-cart-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }

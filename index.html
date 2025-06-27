@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luz | Joias Únicas para Momentos Especiais</title>
-
     <meta name="description" content="Descubra a coleção exclusiva de joias da Luz: colares, anéis, brincos e pulseiras para realçar sua beleza e estilo. Receba promoções e lançamentos!">
     <meta name="keywords" content="joias, bijuterias, colares, anéis, brincos, pulseiras, moda, acessórios, luxo, semi joias, promoções, lançamentos, e-commerce joias">
     <meta name="author" content="Luz">
@@ -13,13 +12,41 @@
     <meta property="og:image" content="imagens/banner.png" />
     <meta property="og:url" content="https://seusite.com" />
     <meta name="twitter:card" content="summary_large_image">
-
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-[var(--cor-fundo)] text-[var(--cor-texto)]">
 
-    <div id="header-placeholder"></div>
+    <div class="bg-[#d4c7bb] text-[#2f2f2f] text-center py-2.5 text-xs md:text-sm tracking-wider">
+        CONFIRA NOSSAS PROMOÇÕES E LANÇAMENTOS!
+    </div>
+    <header class="bg-white shadow-sm" id="main-header">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+            <div class="flex-1 flex justify-start">
+                <nav id="desktop-nav-links" aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 text-xs md:text-sm uppercase tracking-wider"></nav>
+                <button id="menu-button" class="md:hidden text-gray-600 hover:text-[#2f2f2f] focus:outline-none p-2 -ml-2" aria-label="Abrir menu de navegação">
+                    <svg class="w-6 h-6 icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="index.html" class="text-3xl font-bold tracking-[.3em] uppercase font-joanna transition-colors duration-200 hover:text-[var(--cor-destaque)]" aria-label="Nour Luz Home">luz</a>
+            </div>
+            <div class="flex-1 flex justify-end items-center space-x-2">
+                <a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20joias%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="text-xl md:text-2xl hover:text-gray-600 transition-colors duration-200 p-2" aria-label="Fale conosco no WhatsApp">
+                    <svg class="w-6 h-6 icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" role="img" aria-label="WhatsApp Icon">
+                        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-66.3-8.8-94.3-25.7l-6.7-4-69.8 18.3L72 359.2l-4.5-7c-18.9-29.7-28.9-63.3-28.9-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                    </svg>
+                </a>
+                <button id="cart-toggle-button" class="relative text-xl md:text-2xl hover:text-gray-600 transition-colors duration-200 p-2" aria-label="Ver sacola de compras">
+                    <svg class="w-6 h-6 icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.658-.463 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                    <span id="cart-item-count" class="absolute -top-1 -right-1 bg-[var(--cor-destaque)] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
     <main>
         <section class="hero-section-height-final grid md:grid-cols-2 bg-white relative overflow-hidden">
@@ -35,16 +62,13 @@
                 <div class="text-white max-w-lg">
                     <h2 class="text-4xl md:text-5xl font-joanna font-bold mb-4 md:mb-5 leading-tight tracking-wide drop-shadow-md">EXPERIMENTE ALGO NOVO</h2>
                     <p class="mb-8 md:mb-10 text-lg lg:text-xl leading-relaxed tracking-normal drop-shadow-md">joias com essencia e significado.</p>
-                    
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full max-w-sm mx-auto">
                         <a href="todos-os-produtos.html" class="w-full sm:w-auto text-center bg-[var(--cor-destaque)] text-white py-3 px-8 font-semibold transition-colors duration-300 border border-[var(--cor-destaque)] text-sm uppercase tracking-wider rounded-full shadow-md hover:bg-[var(--cor-destaque-hover)] hover:border-[var(--cor-destaque-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--cor-destaque)] focus:ring-opacity-75">Loja Completa</a>
                         <a href="#tendencias" class="w-full sm:w-auto text-center border border-white text-white py-3 px-8 font-semibold transition-colors duration-300 hover:bg-white hover:text-[var(--cor-destaque)] text-sm uppercase tracking-wider rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-75">Novas Chegadas</a>
                     </div>
-
                 </div>
             </div>
         </section>
-
         <section class="py-16 bg-white" id="loja">
             <div class="max-w-screen-xl mx-auto px-4 md:px-6">
                 <h3 class="text-3xl font-joanna font-bold mb-10 text-left pb-2">Categorias Populares</h3>
@@ -84,7 +108,6 @@
                 </div>
             </div>
         </section>
-
         <section class="py-16 bg-[#f8f8f8] md:grid md:grid-cols-2 md:items-center md:h-[400px] overflow-hidden" id="sobre">
             <div class="p-8 md:p-12 text-left">
                 <h3 class="text-3xl lg:text-4xl font-joanna font-bold mb-5 md:mb-6 leading-tight text-[#2f2f2f]">Surpreenda quem você ama com um presente especial.</h3>
@@ -95,7 +118,6 @@
                 <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
             </div>
         </section>
-
         <section class="py-16 bg-white" id="tendencias">
             <div class="max-w-screen-xl mx-auto px-4 md:px-6">
                 <h3 class="text-3xl font-joanna font-bold mb-10 text-left flex items-center justify-between">
@@ -108,8 +130,74 @@
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
-
+    <footer class="footer-custom bg-[#e4e0d9]">
+        <div class="max-w-screen-xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-start">
+            <div class="flex flex-row justify-between w-full md:w-auto md:justify-start md:space-x-12">
+                <div class="footer-col-group">
+                    <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Loja</h4>
+                    <nav aria-label="Links da Loja">
+                        <ul class="space-y-1 text-xs text-gray-700">
+                            <li><a href="brincos.html" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Brinco</a></li>
+                            <li><a href="colares.html" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Colar</a></li>
+                            <li><a href="aneis.html" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Anel</a></li>
+                            <li><a href="pulseiras.html" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Pulseira</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-col-group">
+                    <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Info</h4>
+                    <nav aria-label="Links de Informação">
+                        <ul class="space-y-1 text-xs text-gray-700">
+                            <li><a href="sobre-nos.html" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Sobre Nós</a></li>
+                            <li><a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20joias%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Contato</a></li>
+                            <li><a href="https://wa.me/5511985842013?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20envio%20e%20devolu%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200">Envio & Devoluções</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-col-group">
+                    <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Social</h4>
+                    <nav aria-label="Links de Redes Sociais">
+                        <ul class="space-y-1 text-xs text-gray-700">
+                            <li><a href="https://instagram.com/nourluz" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-[var(--cor-destaque)] transition-colors duration-200" aria-label="Siga-nos no Instagram"><i class="fab fa-instagram mr-2"></i>Instagram</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="flex flex-col w-full md:w-1/3 md:text-right mt-8 md:mt-0 md:ml-auto">
+                <h4 class="font-bold mb-2 text-xs uppercase tracking-wider text-[#2f2f2f]">Junte-se à nossa comunidade.</h4>
+                <p class="mb-4 text-xs text-gray-700">Clique para entrar no nosso grupo exclusivo do Instagram e ficar por dentro das novidades.</p>
+                <a href="https://ig.me/j/AbZMqqMZtJ3e6oKx/" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#2f2f2f] text-white px-3 py-2.5 font-semibold rounded-sm transition-colors duration-300 hover:bg-gray-800 text-xs uppercase tracking-wider focus:outline-none focus:ring-2 focus:ring-[#2f2f2f] focus:ring-opacity-75">Entrar no Grupo</a>
+            </div>
+        </div>
+        <div class="footer-bottom-bar bg-[#b09f8d] py-4 px-4 md:px-6 text-xs text-gray-700 flex flex-col md:flex-row justify-between items-center w-full">
+            <p class="mb-2 md:mb-0">&copy; <span id="current-year"></span> Luz Joias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <button id="back-to-top" class="fixed bottom-20 right-6 bg-[var(--cor-destaque)] text-white p-3 rounded-full shadow-lg opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-[var(--cor-destaque-hover)]" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('opacity-100', 'translate-y-0');
+                    backToTopButton.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        const currentYearEl = document.getElementById('current-year');
+        if(currentYearEl) {
+            currentYearEl.textContent = new Date().getFullYear();
+        }
+    </script>
+    
     <div id="mobile-menu" class="fixed top-0 left-0 h-full bg-white z-50 w-72 shadow-lg p-6 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
         <div class="flex justify-between items-center mb-8">
             <h2 class="text-xl font-bold font-joanna text-[var(--cor-texto)]">Categorias</h2>
@@ -120,46 +208,34 @@
         <nav id="mobile-nav-links" class="flex flex-col space-y-4"></nav>
     </div>
     <div id="mobile-menu-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-60 z-40 md:hidden"></div>
+
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full bg-white z-50 w-full max-w-sm shadow-lg p-6 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="flex justify-between items-center mb-6 pb-4 border-b">
+            <h2 class="text-xl font-bold font-joanna text-[var(--cor-texto)]">Sua Sacola</h2>
+            <button id="close-cart-button" class="text-gray-600 hover:text-[var(--cor-texto)] focus:outline-none" aria-label="Fechar sacola">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div id="cart-items-container" class="flex-grow overflow-y-auto">
+            </div>
+        <div id="cart-footer" class="pt-6 border-t">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-lg font-semibold">Total</span>
+                <span id="cart-total-price" class="text-lg font-bold text-[var(--cor-destaque)]">R$ 0,00</span>
+            </div>
+            <button id="cart-checkout-button" class="w-full text-center bg-[var(--cor-destaque)] text-white py-3 px-8 font-semibold transition-colors duration-300 uppercase tracking-wider rounded-md hover:bg-[var(--cor-destaque-hover)]">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+    <div id="cart-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-60 z-40"></div>
+    <div id="add-to-cart-toast" class="fixed top-5 right-5 bg-white text-[var(--cor-texto)] p-4 rounded-lg shadow-lg flex items-center space-x-4 z-50 opacity-0 -translate-y-10 transition-all duration-300 pointer-events-none">
+        <span>Produto adicionado à sacola!</span>
+    </div>
     
     <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
     <script src="js/layout.js" defer></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-            const newArrivalsGrid = document.getElementById('new-arrivals-grid');
-            if (newArrivalsGrid) {
-                // *** LÓGICA CORRIGIDA PARA O NOVO FORMATO DE CATEGORIAS ***
-
-                const categoriesToShow = ['brincos', 'colares', 'aneis', 'pulseiras'];
-                const latestProductByCategory = {};
-
-                // 1. Percorre toda a lista de produtos
-                for (const product of products) {
-                    // 2. Para cada produto, percorre sua LISTA de categorias
-                    for (const categoryOfProduct of product.category) {
-                        // 3. Verifica se a categoria do produto é uma das que queremos mostrar
-                        if (categoriesToShow.includes(categoryOfProduct)) {
-                            // 4. Armazena o produto como o mais recente para aquela categoria.
-                            // Se outro produto da mesma categoria aparecer depois na lista, ele será substituído.
-                            latestProductByCategory[categoryOfProduct] = product;
-                        }
-                    }
-                }
-                
-                const featuredProducts = categoriesToShow.map(cat => latestProductByCategory[cat]).filter(Boolean);
-                
-                newArrivalsGrid.innerHTML = featuredProducts.map(product => `
-                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
-                        <a href="${product.category[0]}.html" class="block">
-                            <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
-                        </a>
-                        <div class="p-6 text-center">
-                            <p class="text-gray-800 text-base mb-2">${product.name}</p>
-                            <span class="text-xl font-semibold text-[var(--cor-texto)]">${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        });
-    </script>
+    
 </body>
 </html>
