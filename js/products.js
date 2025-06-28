@@ -25,7 +25,7 @@ const products = [
         id: 4, 
         category: ['brincos'], 
         name: 'Kit 3 Pares de Brincos Prata 925 Concha', 
-        price: 30.00, 
+        price: 45.60, 
         image: 'imagens/Kit 3 Pares de Brincos Prata 925 Concha Brinco Feminino Delicado Minimalista.jpg', 
         alt: 'Kit 3 Pares de Brincos Prata 925 Concha' 
     },
@@ -33,7 +33,7 @@ const products = [
         id: 5, 
         category: ['brincos'], 
         name: 'Brinco Triângulo Vazado com Zircônias', 
-        price: 28.50, 
+        price: 32.90, 
         image: 'imagens/brincotriangulo.jpg', 
         alt: 'Brinco Triângulo Vazado com Zircônias em Prata 925' 
     },
@@ -283,7 +283,7 @@ const products = [
         id: 36, 
         category: ['brincos'], 
         name: 'Kit Brinco Pedrinhas', 
-        price: 35.00, 
+        price: 34.90, 
         image: 'imagens/kit brinco pedrinha.JPG', 
         alt: 'Kit Brinco Pedrinhas' 
     },
@@ -300,7 +300,7 @@ const products = [
         id: 38, 
         category: ['brincos'], 
         name: 'Brinco Lacinho', 
-        price: 30.00, 
+        price: 34.00, 
         image: 'imagens/brinco lacinho.JPG', 
         alt: 'Brinco Lacinho' 
     },
@@ -316,7 +316,7 @@ const products = [
         id: 40, 
         category: ['brincos'], 
         name: 'Conjunto Brinco Coração', 
-        price: 36.60, 
+        price: 39.90, 
         image: 'imagens/conjunto brinco coracao.JPG', 
         alt: 'Conjunto Brinco Coração' 
     },
