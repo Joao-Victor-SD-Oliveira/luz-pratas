@@ -344,4 +344,13 @@ const products = [
         image: 'imagens/colar de cruz.JPG', 
         alt: 'Colar de Cruz' 
     },
+
+    { 
+        id: 44, 
+        category: ['aneis'], 
+        name: 'Anel de Prata 925 Entrelaçado com Zircônia', 
+        price: 69.90, 
+        image: 'imagens/Anel de Prata Entrelacado.jpg', 
+        alt: 'Anel de Prata 925 Entrelaçado com Zircônia' 
+    },
 ];
