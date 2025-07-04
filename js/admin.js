@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     const productIdInput = document.getElementById('product-id');
 
-    const apiUrl = 'http://localhost:8080/api/produtos';
+    const apiUrl = 'http://https://api-nourluz.onrender.com/api/produtos';
 
     const loadProducts = async () => {
         tableBody.innerHTML = '';
