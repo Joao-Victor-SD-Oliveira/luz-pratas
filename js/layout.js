@@ -9,7 +9,7 @@ const renderProducts = async (category) => {
     if (!productGrid) return;
 
     // 1. Constrói a URL da API. Se uma categoria for fornecida, adiciona como parâmetro.
-    const apiUrl = 'http://localhost:8080/api/produtos';
+    const apiUrl = 'http://https://api-nourluz.onrender.com/api/produtos';
     const fetchUrl = category ? `${apiUrl}?categoria=${category}` : apiUrl;
 
     try {
