@@ -9,7 +9,8 @@ const renderProducts = async (category) => {
     if (!productGrid) return;
 
     // 1. Constrói a URL da API. Se uma categoria for fornecida, adiciona como parâmetro.
-    const apiUrl = 'http://https://api-nourluz.onrender.com/api/produtos';
+    // <-- CORREÇÃO AQUI: URL da API estava malformada.
+    const apiUrl = 'https://api-nourluz.onrender.com/api/produtos';
     const fetchUrl = category ? `${apiUrl}?categoria=${category}` : apiUrl;
 
     try {
@@ -93,31 +94,5 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         });
-
-        // Lógica da Página Inicial
-        const newArrivalsGrid = document.getElementById('new-arrivals-grid');
-        if (newArrivalsGrid) {
-            const categoriesToShow = ['brincos', 'colares', 'aneis', 'pulseiras'];
-            const latestProductByCategory = {};
-            for (const product of products) {
-                for (const categoryOfProduct of product.category) {
-                    if (categoriesToShow.includes(categoryOfProduct)) {
-                        latestProductByCategory[categoryOfProduct] = product;
-                    }
-                }
-            }
-            const featuredProducts = Object.values(latestProductByCategory);
-            newArrivalsGrid.innerHTML = featuredProducts.map(product => `
-                <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2">
-                    <a href="${product.category[0]}.html" class="block">
-                        <img src="${product.image}" alt="${product.alt}" class="w-full h-56 object-cover">
-                    </a>
-                    <div class="p-6 text-center">
-                        <p class="text-gray-800 text-base mb-2">${product.name}</p>
-                        <span class="text-xl font-semibold text-[var(--cor-texto)]">${product.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
-                    </div>
-                </div>
-            `).join('');
-        }
     })();
 });

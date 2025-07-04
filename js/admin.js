@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     const productIdInput = document.getElementById('product-id');
 
-    const apiUrl = 'http://https://api-nourluz.onrender.com/api/produtos';
+    // <-- CORREÇÃO AQUI: URL da API estava malformada.
+    const apiUrl = 'https://api-nourluz.onrender.com/api/produtos';
 
     const loadProducts = async () => {
         tableBody.innerHTML = '';
@@ -17,14 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 if (response.status === 401 || response.status === 403) {
                     alert("Acesso negado. Por favor, faça o login.");
-                    window.location.href = 'login.html';
+                    // Assume que a página de login está no mesmo nível que a admin.html
+                    window.location.href = 'login.html'; 
                 }
                 throw new Error('Falha ao carregar os produtos.');
             }
             const products = await response.json();
             products.forEach(product => {
                 const row = document.createElement('tr');
-                // --- MUDANÇA AQUI: Adicionando data-label para cada célula ---
                 row.innerHTML = `
                     <td data-label="ID">${product.id}</td>
                     <td data-label="Nome">${product.nome}</td>

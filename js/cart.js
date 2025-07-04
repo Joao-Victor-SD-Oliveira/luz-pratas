@@ -12,21 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotalPriceElement = document.getElementById('cart-total-price');
     const cartFooter = document.getElementById('cart-footer');
     const notificationToast = document.getElementById('add-to-cart-toast');
+
+    // <-- ADIÇÃO AQUI: URL base da API para buscar produtos.
+    const API_BASE_URL = 'https://api-nourluz.onrender.com/api/produtos';
     
     let cart = []; // Nosso carrinho, um array em memória
 
     // --- FUNÇÃO MESTRE DE ATUALIZAÇÃO ---
-    // Uma única função para redesenhar tudo com base nos dados do carrinho
     const updateCartUI = () => {
-        // Atualiza o contador no ícone do header
         if (cartCountElement) {
             cartCountElement.textContent = cart.length;
             cartCountElement.classList.toggle('hidden', cart.length === 0);
         }
 
-        // Atualiza o painel da sacola
         if (cartItemsContainer && cartFooter) {
-            cartItemsContainer.innerHTML = ''; // Limpa a lista visual
+            cartItemsContainer.innerHTML = ''; 
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<p class="text-center text-gray-500 pt-10">Sua sacola está vazia.</p>';
                 cartFooter.classList.add('hidden');
@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartFooter.classList.remove('hidden');
                 let totalPrice = 0;
                 cart.forEach(item => {
-                    totalPrice += item.price;
+                    totalPrice += item.preco; // <-- CORREÇÃO AQUI: A propriedade é 'preco', não 'price'
                     const itemHTML = `
                         <div class="flex items-center space-x-4 mb-4">
-                            <img src="${item.image}" alt="${item.alt}" class="w-16 h-16 object-cover rounded">
+                            <img src="${item.imagemUrl}" alt="${item.descricao}" class="w-16 h-16 object-cover rounded">
                             <div class="flex-grow">
-                                <p class="font-semibold text-sm">${item.name}</p>
-                                <p class="text-gray-600 text-sm">${item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                                <p class="font-semibold text-sm">${item.nome}</p>
+                                <p class="text-gray-600 text-sm">${item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                             </div>
                             <button data-product-id="${item.id}" class="remove-from-cart-btn text-gray-400 hover:text-red-500" aria-label="Remover item">
                                 <svg class="w-5 h-5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
@@ -73,19 +73,33 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('luz_joias_cart', JSON.stringify(cart));
     };
     
-    const addItemToCart = (productId) => {
-        const product = products.find(p => p.id == productId);
-        if (!product) return;
+    // <-- REESCRITA COMPLETA DA FUNÇÃO addItemToCart ---
+    const addItemToCart = async (productId) => {
+        if (!productId) return;
 
         if (cart.some(item => item.id == productId)) {
             showNotification('Este item já está na sacola.');
             return;
         }
 
-        cart.push(product);
-        saveCartToStorage();
-        updateCartUI();
-        showNotification(`${product.name} foi adicionado à sacola!`);
+        try {
+            // Busca os dados do produto na API para garantir que temos todas as informações
+            const response = await fetch(`${API_BASE_URL}/${productId}`);
+            if (!response.ok) {
+                throw new Error('Produto não encontrado na API.');
+            }
+            const product = await response.json();
+
+            // Adiciona o produto completo ao carrinho
+            cart.push(product);
+            saveCartToStorage();
+            updateCartUI();
+            showNotification(`${product.nome} foi adicionado à sacola!`);
+
+        } catch (error) {
+            console.error('Erro ao adicionar item ao carrinho:', error);
+            showNotification('Não foi possível adicionar o item.');
+        }
     };
 
     const removeItemFromCart = (productId) => {
@@ -94,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveCartToStorage();
         updateCartUI();
         if (removedItem) {
-            showNotification(`${removedItem.name} removido da sacola.`);
+            showNotification(`${removedItem.nome} removido da sacola.`);
         }
     };
     
@@ -109,24 +123,20 @@ document.addEventListener('DOMContentLoaded', () => {
         cartBackdrop?.classList.add('hidden');
     }
 
-    // Ouvintes de eventos principais
-    document.body.addEventListener('click', (event) => {
-        // Adicionar ao Carrinho
+    document.body.addEventListener('click', async (event) => {
         if (event.target.matches('.add-to-cart-btn')) {
-            addItemToCart(event.target.dataset.productId);
+            // Chama a nova função assíncrona
+            await addItemToCart(event.target.dataset.productId);
         }
-        // Remover do Carrinho
         if (event.target.matches('.remove-from-cart-btn')) {
             removeItemFromCart(event.target.dataset.productId);
         }
-        // Abrir/Fechar painel
         if (event.target.matches('#cart-toggle-button, #cart-toggle-button *')) {
             openCartPanel();
         }
         if (event.target.matches('#close-cart-button, #close-cart-button *, #cart-backdrop')) {
             closeCartPanel();
         }
-        // Finalizar Compra
         if (event.target.matches('#cart-checkout-button')) {
             handleCheckout();
         }
@@ -135,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleCheckout() {
         if (cart.length === 0) return;
         const phoneNumber = "5511985842013";
-        let message = "Olá! Gostaria de comprar as seguintes pratas:\n\n";
-        cart.forEach(product => { message += `- ${product.name}\n`; });
-        const total = cart.reduce((sum, p) => sum + p.price, 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        let message = "Olá! Gostaria de comprar os seguintes produtos:\n\n";
+        cart.forEach(product => { message += `- ${product.nome}\n`; });
+        const total = cart.reduce((sum, p) => sum + p.preco, 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         message += `\n*Total: ${total}*`;
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
