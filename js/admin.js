@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productIdInput = document.getElementById('product-id');
 
     // <-- CORREÇÃO AQUI: URL da API estava malformada.
-    const apiUrl = 'https://api-nourluz.onrender.com/produtos';
+    const apiUrl = 'https://api-nourluz.onrender.com/api/produtos';
 
     const loadProducts = async () => {
         tableBody.innerHTML = '';
