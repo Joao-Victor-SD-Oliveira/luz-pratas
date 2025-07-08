@@ -1,7 +1,6 @@
 /*
   Descrição: Este arquivo centraliza todos os dados dos produtos da loja.
   Estrutura: O campo 'category' é uma lista (array) para suportar múltiplos cadastros.
-  Versão: IDs sequenciais.
 */
 
 const products = [
@@ -312,14 +311,7 @@ const products = [
         image: 'imagens/brinco raio.JPG', 
         alt: 'Brinco Raio' 
     },
-    { 
-        id: 40, 
-        category: ['brincos'], 
-        name: 'Conjunto Brinco Coração', 
-        price: 39.90, 
-        image: 'imagens/conjunto brinco coracao.JPG', 
-        alt: 'Conjunto Brinco Coração' 
-    },
+    
     { 
         id: 41, 
         category: ['brincos'], 
