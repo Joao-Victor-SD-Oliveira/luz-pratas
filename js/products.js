@@ -348,10 +348,10 @@ const products = [
     { 
         id: 45, 
         category: ['brincos'], 
-        name: 'Brinco Losango - Prata 925', 
+        name: 'Brinco Aria – Prata 925 com design geométrico minimalista', 
         price: 75.89, 
         image: 'imagens/Brinco Losango - Prata 925.jpg', 
-        alt: 'Brinco Losango - Prata 925' 
+        alt: 'Brinco Aria – Prata 925 com design geométrico minimalista' 
     },
     { 
         id: 46, 
