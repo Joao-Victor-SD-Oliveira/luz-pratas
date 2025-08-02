@@ -49,15 +49,15 @@ const products = [
         category: ['aneis'], 
         name: 'Anel Ajustável', 
         price: 62.90, 
-        image: 'imagens/Anel Ajustável - Prata 925.jpg', 
+        image: 'imagens/Anel Ajustavel - 2.jpg', 
         alt: 'Anel Ajustável em Prata 925' 
     },
     { 
         id: 8, 
         category: ['aneis'], 
-        name: 'Anel Zircônia Verde', 
+        name: 'Anel Falange Aurora com Pedra Verde em Prata 925', 
         price: 64.90, 
-        image: 'imagens/Anel Zircônia Verde - Prata 925.jpg', 
+        image: 'imagens/Anel Falange Aurora com Pedra Verde - Prata 925.jpg', 
         alt: 'Anel com Zircônia Verde em Prata 925' 
     },
     { 
@@ -169,7 +169,7 @@ const products = [
         category: ['brincos'], 
         name: 'Brinco Meia Argola Zircônia Verde', 
         price: 84.90, 
-        image: 'imagens/Brinco Meia Argola Zircônia Verde.jpg', 
+        image: 'imagens/Brinco Meia Argola Zircônia Verde - 2.jpg', 
         alt: 'Brinco Meia Argola Zircônia Verde' 
     },
     { 
@@ -209,7 +209,7 @@ const products = [
         category: ['pulseiras'], 
         name: 'Pulseira Zircônias Clássicas', 
         price: 84.90, 
-        image: 'imagens/Pulseira Zircônias - Prata 925.jpg', 
+        image: 'imagens/Pulseira Zircônias - Prata 925 - 2.jpg', 
         alt: 'Pulseira de prata com pontos de zircônia' 
     },
    
@@ -344,5 +344,21 @@ const products = [
         price: 69.90, 
         image: 'imagens/Anel de Prata Entrelacado.jpg', 
         alt: 'Anel de Prata 925 Entrelaçado com Zircônia' 
+    },
+    { 
+        id: 45, 
+        category: ['brincos'], 
+        name: 'Brinco Losango - Prata 925', 
+        price: 75.89, 
+        image: 'imagens/Brinco Losango - Prata 925.jpg', 
+        alt: 'Brinco Losango - Prata 925' 
+    },
+    { 
+        id: 46, 
+        category: ['brincos'], 
+        name: 'Brinco Serena – Prata 925 com Zircônias Rosa', 
+        price: 84.90, 
+        image: 'imagens/Brinco Serena Zirconias Rosas.jpg', 
+        alt: 'Brinco Serena – Prata 925 com Zircônias Rosa' 
     },
 ];
